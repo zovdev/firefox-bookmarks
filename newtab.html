@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая вкладка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <main class="container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Поиск в интернете..." autofocus>
+        </div>
+
+        <div class="grid-container" id="bookmarks-grid">
+            <button class="bookmark-card add-btn" id="add-bookmark-btn" title="Добавить закладку">
+                <div class="plus-icon">+</div>
+            </button>
+        </div>
+    </main>
+
+    <div class="controls">
+        <button id="settings-btn" class="icon-btn" title="Настройки">⚙️</button>
+    </div>
+
+    <dialog id="bookmark-modal" class="modal">
+        <div class="modal-content">
+            <h2>Добавить закладку</h2>
+            <form id="bookmark-form">
+                <div class="form-group">
+                    <label for="site-url">URL</label>
+                    <input type="url" id="site-url" required placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="site-title">Название</label>
+                    <input type="text" id="site-title" placeholder="Мой сайт">
+                </div>
+                <div class="form-group">
+                    <label>Изображение</label>
+                    <div class="image-preview-container">
+                        <img id="preview-bg" src="" alt="" hidden>
+                        <img id="preview-img" src="" alt="Preview" hidden>
+                        <div id="preview-placeholder">Нет изображения</div>
+                    </div>
+                    <div class="image-controls">
+                        <input type="url" id="image-url-input" placeholder="Ссылка на картинку (необязательно)">
+                        <button type="button" id="fetch-image-btn">Загрузить</button>
+                    </div>
+                    <p class="warning-text" id="image-warning" hidden>⚠️ Изображение не загружено. Нажмите сохранить еще раз, чтобы продолжить без него.</p>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancel-bookmark">Отмена</button>
+                    <input type="submit" class="btn-primary" value="Сохранить">
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="settings-modal" class="modal">
+        <div class="modal-content">
+            <h2>Настройки</h2>
+            <form id="settings-form">
+                <div class="form-group">
+                    <label for="columns-count">Количество закладок в строке</label>
+                    <input type="number" id="columns-count" min="1" max="30" value="5">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancel-settings">Закрыть</button>
+                    <button type="submit" class="btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Dev NewTab",
+    "version": "1.1",
+    "description": "Настраиваемая страница новой вкладки.",
+    "permissions": [
+        "storage",
+        "search"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "develper-newtab@develper",
+            "strict_min_version": "109.0"
+        }
+    }
+}
